@@ -13,7 +13,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-
     }
 
     /**
@@ -23,16 +22,16 @@ class HomeController extends Controller
      */
     public function userHome()
     {
-        return view('home',["msg"=>"I am user role"]);
+        return view('roles.cashier.home', ["msg" => "I am user role"]);
     }
 
     public function editorHome()
     {
-        return view('home',["msg"=>"I am Editor role"]);
+        return view('roles.manager.home', ["msg" => "Editor role"]);
     }
 
     public function adminHome()
     {
-        return view('home',["msg"=>"I am Admin role"]);
+        return view('roles.admin.dashboard', ["msg" => "Admin role"]);
     }
 }
