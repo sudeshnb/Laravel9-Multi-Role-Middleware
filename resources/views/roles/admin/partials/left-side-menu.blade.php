@@ -47,18 +47,18 @@ $current_route = request()->route()->getName();
               <li class="mm-active">
                   <a href="#">
                       <i class="metismenu-icon pe-7s-diamond"></i>
-                      Elements
+                      Product management
                       <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                   </a>
                   <ul class="mm-show">
                       <li>
-                          <a href="#">
+                          <a href="{{route('admin.product')}}"  class="{{$current_route=='admin.product'?'mm-active':''}} ">
                               <i class="metismenu-icon"></i>
-                              Buttons
+                              Products
                           </a>
                       </li>
                       <li>
-                          <a href="#" class="mm-active">
+                          <a href="#">
                               <i class="metismenu-icon">
                               </i>Dropdowns
                           </a>
