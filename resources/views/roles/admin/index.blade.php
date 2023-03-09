@@ -8,42 +8,29 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Scripts -->
     {{-- <script type="text/javascript" src="{{ asset('js/main.js') }}"></script> --}}
-    <script src="{{ asset('js/main.js') }}" defer></script>
+    <script src="{{ asset('js/new.js') }}" defer></script>
     <!-- Styles -->
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/clean.css') }}" rel="stylesheet">
 </head>
 
-<body">
+<body class="">
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-  <!-- Navbar -->
-  @include('roles.admin.partials.nav-bar')
-  <!-- /.navbar -->
-  {{-- @include('admin.partials.left-sidebar') --}}
-  <!-- Content Wrapper. Contains page content -->
-  {{-- <div class="content-wrapper"> --}}
-    <div class="app-main">
-        @include('roles.admin.partials.left-side-menu')
-    <!-- Content Header (Page header) -->
-    {{-- @yield('content-header') --}}
-    <!-- Main content -->
-    {{-- <section class="content"> --}}
-      {{-- <div class="container-fluid"> --}}
-          {{-- @yield('body') --}}
-      {{-- </div> --}}
-      <!-- /.container-fluid -->
-    {{-- </section> --}}
-    <!-- /.content -->
-    <div class="app-main__outer">
-        <div class="app-main__inner">
-            @yield('body')
+        <!-- Navbar -->
+        @include('roles.admin.partials.nav-bar')
+        <!-- End Navbar -->
+        <div class="app-main btn-close-options">
+            {{-- @include('roles.admin.partials.settings') --}}
+            @include('roles.admin.partials.left-side-menu')
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    @yield('content-header')
+                    @yield('body')
+                </div>
+                @include('roles.admin.partials.footer')
+            </div>
         </div>
-        @include('roles.admin.partials.footer')
+        <!-- app-main -->
     </div>
-  </div>
-  <!-- /.content-wrapper -->
-  
-
-</div>
-<!-- ./wrapper -->
+    <!-- app-container -->
 </body>
 </html>

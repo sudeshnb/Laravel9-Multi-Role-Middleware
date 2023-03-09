@@ -1,21 +1,20 @@
 @extends('roles.admin.index')
 
 @section('content-header')
-<div class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1 class="m-0">Dashboard</h1>
-      </div><!-- /.col -->
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
-</div>
+<div class="app-page-title">
+  <div class="page-title-wrapper">
+      <div class="page-title-heading">
+          <div class="page-title-icon">
+              <i class="pe-7s-car icon-gradient bg-mean-fruit">
+              </i>
+          </div>
+          <div>Analytics Dashboard
+              <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+              </div>
+          </div>
+      </div>   
+  </div>
+</div> 
 <!-- /.content-header -->
 @endsection
 @section('body')
