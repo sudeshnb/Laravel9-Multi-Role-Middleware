@@ -11,6 +11,15 @@
     <script src="{{ asset('js/new.js') }}" defer></script>
     <!-- Styles -->
     <link href="{{ asset('css/clean.css') }}" rel="stylesheet">
+    {{-- Styles For Datatable --}}
+    {{-- <link href="{{ asset('datatable/css/bootstrap.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('datatable/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> --}}
+    <!-- MDBootstrap Datatables  -->
+    {{-- <link href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" rel="stylesheet"> --}}
+    {{-- <link href="{{ asset('dataTable/datatables.min.css') }}"" rel="stylesheet"/> --}}
+<link href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.13.3/af-2.5.2/b-2.3.5/b-colvis-2.3.5/b-html5-2.3.5/b-print-2.3.5/cr-1.6.1/date-1.3.1/fc-4.2.1/fh-3.3.1/kt-2.8.1/r-2.4.0/rg-1.3.0/rr-1.3.2/sc-2.1.0/sb-1.4.0/sp-2.1.1/sl-1.6.1/sr-1.2.1/datatables.min.css" rel="stylesheet"/>
+    
+
 </head>
 
 <body class="">
@@ -32,5 +41,8 @@
         <!-- app-main -->
     </div>
     <!-- app-container -->
+    @stack('stript')
 </body>
+
+
 </html>

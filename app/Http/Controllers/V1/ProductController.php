@@ -50,9 +50,12 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'img' => 'required',
+            'picture' => 'required',
             'category' => 'required',
-            'type_id' => 'required',
+            'quantity' => 'nullable',
+            'sub_category' => 'nullable',
+            'alert_quantity' => 'nullable',
+
         ]);
 
         Product::create($request->post());
@@ -85,9 +88,11 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'img' => 'required',
+            'picture' => 'required',
             'category' => 'required',
-            'type_id' => 'required',
+            'quantity' => 'nullable',
+            'sub_category' => 'nullable',
+            'alert_quantity' => 'nullable',
         ]);
 
         $product->fill($request->post())->save();

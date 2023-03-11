@@ -36,186 +36,371 @@ $current_route = request()->route()->getName();
   </div>    <div class="scrollbar-sidebar">
       <div class="app-sidebar__inner">
           <ul class="vertical-nav-menu">
-              <li class="app-sidebar__heading"> </li>
+              <li class="app-sidebar__heading"> Home</li>
               <li>
                   <a href="{{route('home.admin')}}" class="{{$current_route=='home.admin'?'mm-active':''}} ">
                       <i class="metismenu-icon pe-7s-rocket"></i>
                       Dashboard
                   </a>
               </li>
-              {{-- <li class="app-sidebar__heading">UI Components</li> --}}
+              <li class="app-sidebar__heading">Products Management</li>
+              @if ($current_route=='admin.product')
               <li class="mm-active">
+             @elseif ($current_route=='products.create')
+             <li class="mm-active">
+              @else
+              <li>
+             @endif
                   <a href="#">
                       <i class="metismenu-icon pe-7s-diamond"></i>
-                      Product management
+                      Product
                       <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                   </a>
+                  @if ($current_route=='admin.product')
                   <ul class="mm-show">
+                  @else
+                  <ul>
+                  @endif
                       <li>
                           <a href="{{route('admin.product')}}"  class="{{$current_route=='admin.product'?'mm-active':''}} ">
                               <i class="metismenu-icon"></i>
-                              Products
+                              List  Products 
                           </a>
                       </li>
                       <li>
-                          <a href="#">
+                          <a href="{{ route('products.create') }}" class="{{$current_route=='products.create'?'mm-active':''}} >
                               <i class="metismenu-icon">
-                              </i>Dropdowns
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="metismenu-icon">
-                              </i>Icons
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="metismenu-icon">
-                              </i>Badges
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="metismenu-icon">
-                              </i>Cards
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="metismenu-icon">
-                              </i>List Groups
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="metismenu-icon">
-                              </i>Navigation Menus
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <i class="metismenu-icon">
-                              </i>Utilities
+                              </i>Add Products
                           </a>
                       </li>
                   </ul>
               </li>
               <li>
+                <a href="#">
+                    <i class="metismenu-icon pe-7s-diamond"></i>
+                    Category
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                    <li>
+                        <a href="{{route('admin.product')}}"  class="{{$current_route=='admin.product'?'mm-active':''}} ">
+                            <i class="metismenu-icon"></i>
+                          Add  Category
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('products.create') }}">
+                            <i class="metismenu-icon">
+                            </i>List Category
+                        </a>
+                    </li>
+                </ul>
+            </li>
+              <li>
                   <a href="#">
                       <i class="metismenu-icon pe-7s-car"></i>
-                      Components
+                      Customer
                       <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                   </a>
                   <ul>
                       <li>
                           <a href="">
                               <i class="metismenu-icon">
-                              </i>Tabs
+                              </i>Add Customer
                           </a>
                       </li>
                       <li>
                           <a href="">
                               <i class="metismenu-icon">
-                              </i>Accordions
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Notifications
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Modals
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Progress Bar
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Tooltips &amp; Popovers
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Carousel
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Calendar
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Pagination
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Scrollable
-                          </a>
-                      </li>
-                      <li>
-                          <a href="">
-                              <i class="metismenu-icon">
-                              </i>Maps
+                              </i>List Customer
                           </a>
                       </li>
                   </ul>
               </li>
+              <li>
+                <a href="#">
+                    <i class="metismenu-icon pe-7s-car"></i>
+                    Report
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="metismenu-icon">
+                            </i>Product Report
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="metismenu-icon">
+                            </i>Customer Report
+                        </a>
+                    </li>
+                    <li>
+                      <a href="">
+                          <i class="metismenu-icon">
+                          </i>Sales Report
+                      </a>
+                  </li>
+                  <li>
+                      <a href="">
+                          <i class="metismenu-icon">
+                          </i>Purchase Report
+                      </a>
+                  </li>
+                  <li>
+                    <a href="">
+                        <i class="metismenu-icon">
+                        </i>Expense Report
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="metismenu-icon">
+                        </i>Supplier Report
+                    </a>
+                </li>
+                <li>
+                  <a href="">
+                      <i class="metismenu-icon">
+                      </i>Purchase/Sales Report
+                  </a>
+              </li>
+              <li>
+                  <a href="">
+                      <i class="metismenu-icon">
+                      </i>Purchase Return Report
+                  </a>
+              </li>
+              <li>
+                <a href="">
+                    <i class="metismenu-icon">
+                    </i>Sales Return Report
+                </a>
+            </li><li>
+              <a href="">
+                  <i class="metismenu-icon">
+                  </i>Close Register Report
+              </a>
+          </li>
+                </ul>
+            </li>
               <li  >
                   <a href="">
                       <i class="metismenu-icon pe-7s-display2"></i>
-                      Tables
+                      Sales
+                      <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                   </a>
+                  <ul>
+                    <li>
+                        <a href="">
+                            <i class="metismenu-icon">
+                            </i>POS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="metismenu-icon">
+                            </i>Add Return Invoice
+                        </a>
+                    </li>
+                    <li>
+                      <a href="">
+                          <i class="metismenu-icon">
+                          </i>Ledger Invoice
+                      </a>
+                  </li>
+                  <li>
+                      <a href="">
+                          <i class="metismenu-icon">
+                          </i>Bill To Bill Invoice
+                      </a>
+                  </li>
+                  <li>
+                    <a href="">
+                        <i class="metismenu-icon">
+                        </i>All Invoice
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="metismenu-icon">
+                        </i>List Return Invoice
+                    </a>
+                </li>
+                </ul>
               </li>
               {{-- <li class="app-sidebar__heading">Widgets</li> --}}
               <li>
                   <a href="">
                       <i class="metismenu-icon pe-7s-display2"></i>
-                      Dashboard Boxes
+                      Receipt
+                      <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                   </a>
+                  <ul>
+                    <li>
+                        <a href="">
+                            <i class="metismenu-icon">
+                            </i>List Receipt
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="metismenu-icon">
+                            </i>Add Receipt
+                        </a>
+                    </li>
+                  </ul>
               </li>
               {{-- <li class="app-sidebar__heading">Forms</li> --}}
               <li>
-                  <a href="">
-                      <i class="metismenu-icon pe-7s-mouse">
-                      </i>Forms Controls
-                  </a>
-              </li>
-              <li>
-                  <a href="">
-                      <i class="metismenu-icon pe-7s-eyedropper">
-                      </i>Forms Layouts
-                  </a>
-              </li>
-              <li>
-                  <a href="">
-                      <i class="metismenu-icon pe-7s-pendrive">
-                      </i>Forms Validation
-                  </a>
-              </li>
+                <a href="">
+                    <i class="metismenu-icon pe-7s-display2"></i>
+                    Supplier
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                  <li>
+                      <a href="">
+                          <i class="metismenu-icon">
+                          </i>List Supplier
+                      </a>
+                  </li>
+                  <li>
+                      <a href="">
+                          <i class="metismenu-icon">
+                          </i>Add Supplier
+                      </a>
+                  </li>
+                </ul>
+            </li>
               {{-- <li class="app-sidebar__heading">Charts</li> --}}
-              <li>
+              <li  >
+                <a href="">
+                    <i class="metismenu-icon pe-7s-display2"></i>
+                    Purchase
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                  <li>
+                      <a href="">
+                          <i class="metismenu-icon">
+                          </i>Add Purchase
+                      </a>
+                  </li>
+                  <li>
+                      <a href="">
+                          <i class="metismenu-icon">
+                          </i>Add Return Purchase
+                      </a>
+                  </li>
+                <li>
                   <a href="">
-                      <i class="metismenu-icon pe-7s-graph2">
-                      </i>ChartJS
+                      <i class="metismenu-icon">
+                      </i>List Purchase
                   </a>
               </li>
-              
+              <li>
+                  <a href="">
+                      <i class="metismenu-icon">
+                      </i>List Return Purchase
+                  </a>
+              </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                  <i class="metismenu-icon pe-7s-display2"></i>
+                  Payment
+                  <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+              </a>
+              <ul>
+                <li>
+                    <a href="">
+                        <i class="metismenu-icon">
+                        </i>List Payment
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="metismenu-icon">
+                        </i>Add Payment
+                    </a>
+                </li>
+              </ul>
+          </li>
+          <li>
+            <a href="">
+                <i class="metismenu-icon pe-7s-display2"></i>
+                Inventory Adjustment
+                <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+            </a>
+            <ul>
+              <li>
+                  <a href="">
+                      <i class="metismenu-icon">
+                      </i>List Inventory Adjustment
+                  </a>
+              </li>
+              <li>
+                  <a href="">
+                      <i class="metismenu-icon">
+                      </i>Add Inventory Adjustment
+                  </a>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <a href="">
+              <i class="metismenu-icon pe-7s-display2"></i>
+              Employee
+              <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+          </a>
+          <ul>
+            <li>
+                <a href="">
+                    <i class="metismenu-icon">
+                    </i>List Employee
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="metismenu-icon">
+                    </i>Add Employee
+                </a>
+            </li>
+            <li>
+              <a href="">
+                  <i class="metismenu-icon">
+                  </i>Update Employee Salary
+              </a>
+          </li>
+          <li>
+              <a href="">
+                  <i class="metismenu-icon">
+                  </i>Salary Amount List
+              </a>
+          </li>
+          <li>
+            <a href="">
+                <i class="metismenu-icon">
+                </i>Employee Records
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i class="metismenu-icon">
+                </i>Add Employee
+            </a>
+        </li>
+          </ul>
+      </li>
+              <li>
+                <a href="">
+                    <i class="metismenu-icon pe-7s-graph2">
+                    </i>All Invoice
+                </a>
+            </li>
           </ul>
       </div>
   </div>
