@@ -4,6 +4,10 @@
 ```
 composer update
 ```
+or 
+``` 
+composer update –no-scripts 
+```
 ```
 cp .env.example .env
 ```
