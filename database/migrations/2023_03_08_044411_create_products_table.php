@@ -20,9 +20,10 @@ class CreateProductsTable extends Migration
             $table->double('price');
             $table->string('picture');
             $table->string('category');
-            $table->string('sub_category')->nullable();;
+            $table->string('location')->nullable();;
             $table->integer('quantity')->nullable();;
-            $table->integer('alert_quantity')->nullable();;
+            $table->integer('stars')->nullable();
+            $table->integer('type_id');
             $table->timestamps();
         });
     }
