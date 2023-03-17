@@ -103,8 +103,8 @@
             <div class="position-relative row form-group">
                 <label for="picture" class="col-sm-2 col-form-label">Product Picture*</label>
                 <div class="col-sm-10">
-                    {{-- <input name="img" id="img" type="file" class="form-control-file"> --}}
-                    <input name="picture" id="picture" placeholder="Product Picture" type="text" class="form-control">
+                    <input name="picture" id="picture" type="file" class="form-control-file">
+                    {{-- <input name="picture" id="picture" placeholder="Product Picture" type="text" class="form-control"> --}}
 
                     <small class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
                 </div>

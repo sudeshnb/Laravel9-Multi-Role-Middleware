@@ -40,43 +40,44 @@
     <div class="main-card mb-3 card">
         <div class="card-body">
             <h5 class="card-title">Grid 25</h5>
-    <table id="product-table" class="table table-bordered" >
-        <thead>
-             <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Details</th>
-            <th>state</th>
-            <th width="280px">Action</th>
-        </tr>
-    </thead>
-    <tbody >
-	    @foreach ($products as $product)
-	    <tr>
-	        <td>0</td>
-	        <td>{{ $product->name }}</td>
-            <td>{{ $product->price }}</td>
-	        <td>{{ $product->description }}</td>
-	        <td>
-                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
-                    @csrf
-                    @method('DELETE')            
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-	        </td>
-	    </tr>
-	    @endforeach
-    </tbody>
-    </table>
+            <table id="product-table" class="table table-bordered" >
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Picture</th>
+                    <th width="280px">Action</th>
+                </tr>
+            </thead>
+            <tbody >
+	            @foreach ($products as $product)
+	            <tr>
+	                <td>{{$loop->iteration}}</td>
+	                <td>{{ $product->name }}</td>
+                    <td>{{ $product->price }}</td>
+	                <td>{{ $product->description }}</td>
+                    {{-- <td><img src="{{ asset($product->picture) }}" width=50px height=50px> </td> --}}
+                    <td><img  src="{{ asset('storage/'.$product->picture) }}" width=50px height=50px></td>
+                    
+	                <td>
+                        <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                            <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+                            <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                            @csrf
+                            @method('DELETE')            
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+	                </td>
+	            </tr>
+	            @endforeach
+            </tbody>
+        </table>
 
         </div>
-    {!! $products->links() !!}
-
-
+    {{-- {!! $products->links() !!} --}}
     </div>
-
 @endsection
 
 

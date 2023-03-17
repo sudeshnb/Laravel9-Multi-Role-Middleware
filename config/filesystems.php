@@ -45,9 +45,9 @@ return [
         ],
         'admin' => [
             'driver'     => 'local',
-            'root'       => public_path('uploads'),
+            'root'       => public_path('picture'),
             'visibility' => 'public',
-            'url' => env('APP_URL') . 'uploads/',
+            'url' => env('APP_URL') . 'picture/',
         ],
         's3' => [
             'driver' => 's3',
@@ -76,6 +76,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        // public_path('picture') => storage_path('app/storage/picture'),
     ],
 
 ];

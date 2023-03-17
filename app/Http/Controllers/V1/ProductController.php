@@ -28,7 +28,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('id', 'desc')->paginate(5);
+        // $products = Product::orderBy('id', 'desc')->paginate(5);
+        $products = Product::orderBy('created_at', 'DESC')->get();
         return view('roles.admin.components.product.index', ["msg" => "Admin role"], compact('products'));
     }
 
@@ -50,17 +51,27 @@ class ProductController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'picture' => 'required',
             'category' => 'required',
             'quantity' => 'nullable',
             'sub_category' => 'nullable',
             'alert_quantity' => 'nullable',
-
+            'picture' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+        $image_path = $request->file('picture')->store('picture', 'public');
+        // Product::create($request->post());
+        Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'category' => $request->category,
+            'quantity' => $request->quantity,
+            'sub_category' => $request->sub_category,
+            'alert_quantity' => $request->alert_quantity,
+            'picture' => $image_path,
         ]);
 
-        Product::create($request->post());
 
-        return redirect()->route('products.index')->with('success', 'Product has been created successfully.');
+        return redirect()->route('admin.product')->with('success', 'Product has been created successfully.');
     }
     /**
      * Display the specified resource.

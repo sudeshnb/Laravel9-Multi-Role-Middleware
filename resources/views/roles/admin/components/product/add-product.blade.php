@@ -65,8 +65,6 @@
         <!-- /.card -->
       </div>
       <!-- End(main row) -->
-       
-     
     </div>
     <!-- End(main row) -->
 
